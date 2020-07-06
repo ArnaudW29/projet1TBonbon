@@ -8,3 +8,21 @@ Voici le repository pour notre projet de commande de bonbon en ligne.
 Je suis eleve en 1TI de l'[Ephec](https://www.ephec.be/)
 * [WAETERMANS Arnaud](https://github.com/ArnaudW29) 1TM2
 ## Description :
+Site de commande de bonbon en ligne.
+### FONCTIONNALITES PRINCIPALES : 
+* Mettre a disposition une liste de bonbon avec toutes les informations concernant le fabricant et produits.
+* Un formulaire pour ce connecter au site et acceder a son panier.
+### FONCTIONNALITES SECONDAIRES : 
+* Le prix d'achat.
+* Trier par types de bonbons
+## Aspects implémentés :
+* **backend** : Une base de données avec les informations de chaque bonbon et le prix de chaque bonbon.
+* **backend** : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices
+* **backend** : Des webservices (avec les procédures associées) :
+	* Un webservice permettant la connexion de l'utilisateur.
+	* Un webservice permettant de trier les bonbons en fonction de son type .
+	* Un webservice permettant d'afficher le nom de chaque bonbons.
+	* Un webservice permettant de stocker les commandes.
+* **frontend** : Une page web (html, js, css) permettant d'appeler les webservices et de traiter les réponses, les utilisants pour modifier la page: 	
+	* afficher le panier du client.
+	* afficher le prix du panier.
