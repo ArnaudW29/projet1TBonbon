@@ -1,5 +1,5 @@
 # 1T-projet-bonbon
-Voici le repository pour notre projet de commande de bonbon en ligne.
+Voici le repository pour mon projet de confiserie en ligne.
 
 2019 - 2020 Aspects Structures et Données
 
