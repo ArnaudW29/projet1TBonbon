@@ -19,7 +19,7 @@ CREATE TABLE tbMarque(
      CREATE TABLE tbBonbon(
        bonbonId CHAR(3) NOT NULL, /* b01,b02,b03,b04 */
        bonbonNom VARCHAR(45) NOT NULL, /* sucette a la pomme , sucette a la poire etc */
-       bonbonGout VARCHAR(15) NOT NULL,
+       bonbonGout VARCHAR(15) NULL,
        bonbonType VARCHAR(15) NOT NULL, /* sucrés ,acidulés */
        bonbonPrix DECIMAL(4,2) NOT NULL,
        bonbonQte VARCHAR(15) NOT NULL, 
