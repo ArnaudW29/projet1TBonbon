@@ -11,4 +11,4 @@ function connexion() {
         "<input id=\"boutonConnexion\" class=\"boutonConnexion\" type=\"submit\" value=\"Connexion\">\n" +
         "    </form>\n" +
         "    </div>";
-}
+};
