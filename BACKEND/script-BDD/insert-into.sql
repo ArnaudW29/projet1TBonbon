@@ -10,13 +10,25 @@ VALUES
 ('m06','PEZ'),
 ('m07','Fini'),
 ('m08','Tic-Tac'),
-('m09','Napoleon');
+('m09','Napoleon'),
+('m10','Sweet Party');
 
 /* donnée des bonbons */
 
 INSERT INTO tbBonbon(bonbonId,bonbonNom,bonbonGout,bonbonType,bonbonPrix,bonbonQte,marqueId)
 VALUES
-('b01','Haribo Petits Shtroumpfs','','gelatine',1.09,'100 g','m01');
+('b01','Petits Shtroumpfs','','gelatine',1.09,'100 g','m01'), //haribo
+('b02','Shtroumpfs Pik','','citrique',1.09,'100 g','m01'),  //haribo
+('b03','Pêche','pêche','sucrés',1.09,'100 g','m01'),        //haribo
+('b04','Fraise','fraise','gelatine',1.09,'100 g','m01'),    //haribo
+('b05','cola ciric','cola','citrique',0.69,'100 g','m01'),  //haribo
+('b06','Petits dragibus','multi-parfum','gelatine',1.09,'100 g','m01'), //haribo
+('b07','Dents dracula','','gelatine',1.57,'100 g','m05'),   //Astra
+('b08','Spaghetti citric','cola','citrique',9.55,'1 kg','m10'), //Sweet Party
+('b09','Escargot citric','cola','citrique',1.09,'100 g','m04'), //Geldhof
+('b10','Cerise double','cerise','gelatine',1.09,'100 g','m01'), //haribo
+('b11','Orque bleu','','gelatine',1.55,'100 g','m05'); //astra
+
 
 /* donnée des clients (test)*/
 
