@@ -15,4 +15,4 @@ END;
 
 ---------------------------------------------/* service */-----------------------------------------------
     
- CREATE SERVICE "initBonbon" TYPE 'JSON' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.init_bonbon();
+ CREATE SERVICE "initBonbon" TYPE 'JSON' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.proc_init_bonbon();
