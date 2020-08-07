@@ -41,16 +41,11 @@ END;
 
 ---
 
-CREATE PROCEDURE "dba"."http_getIMG"( in url char(255) )
-result( img long binary ) dynamic result sets 1
-begin
- declare extension long varchar;
- set extension = substr(url,CHARINDEX('.',url)+1);
- if extension = 'jpg' then set extension = 'jpeg' end if;
- call sa_set_http_header('Content-Type','image/' || extension);
- select xp_read_file(dba.getPath() || 'img\\' || url) 
+CREATE PROCEDURE "DBA"."http_getIMG"(in url char(255))   /* renvoie le contenu de l imagedont le nom (+ extension) est le paramètre url */
+BEGIN
+  call sa_set_http_header('Content-Type', 'image/png'); 
+  select xp_read_file(dba.getPath() || 'IMG\' || url);  // renvoyer image
 END;
-
 --------------------------------------------------------------------------------------------------------------------------------------
 CREATE SERVICE "root" TYPE 'RAW' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.http_getPage(:url);
 CREATE SERVICE "css" TYPE 'RAW' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.http_getCSS(:url);
