@@ -44,13 +44,11 @@ END;
 CREATE PROCEDURE "dba"."http_getIMG"( in url char(255) )
 result( img long binary ) dynamic result sets 1
 begin
- --
  declare extension long varchar;
  set extension = substr(url,CHARINDEX('.',url)+1);
  if extension = 'jpg' then set extension = 'jpeg' end if;
  call sa_set_http_header('Content-Type','image/' || extension);
  select xp_read_file(dba.getPath() || 'img\\' || url) 
---
 END;
 
 --------------------------------------------------------------------------------------------------------------------------------------
