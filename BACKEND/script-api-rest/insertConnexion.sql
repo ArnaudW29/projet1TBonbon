@@ -3,7 +3,7 @@ BEGIN
     INSERT INTO tbConnexions(clientId,clientMdp,clientIdentifiant)
 VALUES
 (Id,Mdp,Identifiant)
-END
+END;
 
 --------------------------/* service d'insertion dans la table connexion */-----------------------------
 
