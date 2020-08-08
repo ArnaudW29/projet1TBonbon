@@ -22,7 +22,7 @@ CREATE TABLE tbMarque(
      clientMdp VARCHAR(20) NOT NULL, /* admin1234 */
      connexionsDate datetime NOT NULL DEFAULT getDate(),
      
-     CONSTRAINT fk_tbConnexions_tbClient FOREIN KEY (clientId) REFERENCES tbClient ( clientId));
+     CONSTRAINT fk_tbConnexions_tbClient FOREIGN KEY (clientId) REFERENCES tbClient ( clientId));
      
      
       /* Table contenant les inforamations des bonbons*/
