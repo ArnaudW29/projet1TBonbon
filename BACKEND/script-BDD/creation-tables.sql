@@ -15,6 +15,16 @@ CREATE TABLE tbMarque(
      clientMail VARCHAR(70) NOT NULL,  /* DUPONT.loic@hotmail.com */
      CONSTRAINT pk_Client PRIMARY KEY (clientId)
      );
+     
+     /* table des connexions */
+     CREATE TABLE tbConnexions(
+     clientId CHAR(4) NOT NULL, /* cl01,cl02,cl03,cl04 */
+     clientMdp VARCHAR(20) NOT NULL, /* admin1234 */
+     connexionsDate datetime NOT NULL DEFAULT getDate(),
+     
+     CONSTRAINT fk_tbConnexions_tbClient FOREIN KEY (clientId) REFERENCES tbClient ( clientId));
+     
+     
       /* Table contenant les inforamations des bonbons*/
      CREATE TABLE tbBonbon(
        bonbonId CHAR(3) NOT NULL, /* b01,b02,b03,b04 */
