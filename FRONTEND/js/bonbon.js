@@ -38,23 +38,3 @@ function initBonbon() { // Initialise la page avec le catalogue de bonbon
         };
     xhr.send();
 }
-function ajoutBonbon(biere,id,brasserie,volume,qtt,prix){
-    if(clId===""){
-        alert("Veuillez vous connecter avant de commander");
-        return false;
-    }
-    let jsonFeedBack = {};
-    let feedback ="";
-    let idFeedBack="";
-    let url='insertPanier?bId='+id+'&qtt='+qtt+'&cId='+clId;
-    let xhr = new XMLHttpRequest();
-    xhr.open('get',url);
-    xhr.onload=function(){
-        jsonFeedBack= Object.assign(jsonFeedBack,JSON.parse(xhr.responseText));
-        idFeedBack="inputNombre"+id;
-        document.getElementById(idFeedBack).value = jsonFeedBack[0].quant;
-    };
-    xhr.onerror=function(){console.log("xhr error");}
-    xhr.send();
-
-}
