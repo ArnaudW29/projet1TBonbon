@@ -1,0 +1,13 @@
+
+CREATE PROCEDURE "DBA"."getConnexion" (IN id VARCHAR(50),IN mdp VARCHAR(20))
+RESULT(identifiant VARCHAR(50), mdp VARCHAR(20), clientId CHAR(4))
+BEGIN
+    call sa_set_http_header('Access-Control-Allow-Origin','*');
+    call sa_set_http_header('Content-Type','application/json');
+    select clientMdp, clientIdentifiant, clientId from tbClients
+    where id = clientIdentifiant AND mdp = clientMdp
+END;
+
+-----------------------------------------/*service de connexion */----------------------------------------------------
+
+CREATE SERVICE "getConnexion" TYPE 'JSON' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.getConnexion(:id,:mdp);
