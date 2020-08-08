@@ -20,6 +20,7 @@ CREATE TABLE tbMarque(
      CREATE TABLE tbConnexions(
      clientId CHAR(4) NOT NULL, /* cl01,cl02,cl03,cl04 */
      clientMdp VARCHAR(20) NOT NULL, /* admin1234 */
+     clientIdentifiant VARCHAR(50) NOT NULL,
      connexionsDate datetime NOT NULL DEFAULT getDate(),
      
      CONSTRAINT fk_tbConnexions_tbClient FOREIGN KEY (clientId) REFERENCES tbClient ( clientId));
