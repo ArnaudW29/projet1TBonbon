@@ -33,7 +33,7 @@ CREATE TABLE tbMarque(
        bonbonGout VARCHAR(15) NULL,
        bonbonType VARCHAR(15) NOT NULL, /* sucrés ,acidulés */
        bonbonPrix DECIMAL(4,2) NOT NULL,
-       bonbonQte VARCHAR(15) NOT NULL, 
+       bonbonQte INTEGER NOT NULL, 
        marqueId CHAR(3) NOT NULL,
        CONSTRAINT pk_tbBonbon PRIMARY KEY (bonbonId),
        CONSTRAINT fk_tbBonbon_tbMarque FOREIGN KEY (marqueId) REFERENCES tbMarque ( marqueId)
