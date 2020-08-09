@@ -7,4 +7,4 @@ END;
 
 --------------------------/* service d'insertion dans la table connexion */-----------------------------
 
-CREATE SERVICE "proc_insertConnexion" TYPE 'RAW' AUTHORIZATION OFF USER "dba" METHODS 'GET' AS call dba.proc_insertConnexion(:Id,Mdp,Identifiant);
+CREATE SERVICE "proc_insertConnexion" TYPE 'RAW' AUTHORIZATION OFF USER "dba" METHODS 'GET' AS call dba.proc_insertConnexion(:Id,:Mdp,:Identifiant);
