@@ -1,4 +1,4 @@
-CREATE PROCEDURE "DBA"."proc_getPanier"(in Id CHAR(4))
+CREATE PROCEDURE "DBA"."proc_getPanier"(in Id INTEGER)
 RESULT (bonbonId char(3), bonbonNom char(45), bonbonQte VARCHAR(15),bonbonPrix DECIMAL(4,2), QttBonbon INTEGER, prixTot DECIMAL(6,2))
 BEGIN 
     CALL sa_set_http_header('Access-Control-Allow-Origin','*');
