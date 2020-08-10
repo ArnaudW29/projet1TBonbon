@@ -1,4 +1,4 @@
-CREATE PROCEDURE "dba"."proc_insertConnexion"(in Id char(4), in Mdp varchar(20), in Identifiant VARCHAR(50))
+CREATE PROCEDURE "dba"."proc_insertConnexion"(in Id INTEGER, in Mdp varchar(20), in Identifiant VARCHAR(50))
 BEGIN 
     INSERT INTO tbConnexions(clientId,clientMdp,clientIdentifiant)
 VALUES
