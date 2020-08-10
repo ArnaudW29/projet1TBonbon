@@ -1,4 +1,4 @@
-CREATE PROCEDURE "dba"."proc_suppressionPanierComplet"(IN clId char(4))
+CREATE PROCEDURE "dba"."proc_suppressionPanierComplet"(IN clId INTEGER)
 BEGIN 
     DELETE FROM tbPanier
     WHERE clId= clientId
