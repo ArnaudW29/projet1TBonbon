@@ -6,4 +6,4 @@ VALUES
 END;
 
 ----------------------------/* service pour inserer les inscriptions dans la table client */-----------------------------------
-CREATE SERVICE "insertIncsription" TYPE 'RAW' AUTHORIZATION OFF USER "dba" METHODS 'GET' AS call dba.insertInscription(:Nom,:Prenom,Adresse,Identifiant,Mdp,Mail);
+CREATE SERVICE "insertInscription" TYPE 'RAW' AUTHORIZATION OFF USER "dba" METHODS 'GET' AS call dba.insertInscription(:Nom,:Prenom,Adresse,Identifiant,Mdp,Mail);
