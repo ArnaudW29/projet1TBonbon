@@ -6,7 +6,7 @@ CREATE TABLE tbMarque(
   );
      /* Table contenant les informations du client */
    CREATE TABLE tbClient(
-     clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
+     clientId INTEGER NOT NULL AUTO_INCREMENT=4, /* 1,2, 3 , 4 (init a 4pour les test)
      clientNom VARCHAR(30) NOT NULL, /* DUPONT , DUBOIS */
      clientPrenom VARCHAR(30) NOT NULL, /* DENIS, LOIC */
      clientAdresse VARCHAR(80) NOT NULL, /* rue du panier 24 1460 belgique */
