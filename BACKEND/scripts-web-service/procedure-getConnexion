@@ -1,6 +1,6 @@
 
 CREATE PROCEDURE "DBA"."getConnexion" (IN id VARCHAR(50),IN mdp VARCHAR(20))
-RESULT(identifiant VARCHAR(50), mdp VARCHAR(20), clientId CHAR(4))
+RESULT(identifiant VARCHAR(50), mdp VARCHAR(20), clientId INTEGER)
 BEGIN
     call sa_set_http_header('Access-Control-Allow-Origin','*');
     call sa_set_http_header('Content-Type','application/json');
