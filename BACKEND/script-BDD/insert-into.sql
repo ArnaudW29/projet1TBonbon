@@ -34,16 +34,16 @@ VALUES
 
 INSERT INTO tbCLient(clientId,clientNom,clientPrenom,clientAdresse,clientIdentifiant,clientMdp,clientMail)
 VALUES
-('cl01','dupont','denis','rue du panier 21 1460 BELGIQUE','denis974','denis479','denisDD@trashmail.xyz'),
-('cl02','waetermans','arnaud','rue de virginal 21 7090 BELGIQUE','admin','admin29','awj29@outlook.com'),
-('cl03','salamendro','luis','avenue saint huber 1 1480 BELGIQUE','luisendro','salam1480','luis.salamendro@yahoo.com');
+(1,'dupont','denis','rue du panier 21 1460 BELGIQUE','denis974','denis479','denisDD@trashmail.xyz'),
+(2,'waetermans','arnaud','rue de virginal 21 7090 BELGIQUE','admin','admin29','awj29@outlook.com'),
+(3,'salamendro','luis','avenue saint huber 1 1480 BELGIQUE','luisendro','salam1480','luis.salamendro@yahoo.com');
 
 
 /* donnée des commandes des clients (test)  */
 
 INSERT INTO tbCommandes(commandesId,clientId,commandesPrixTOT,commandesQteTOT)
 VALUES
-('co01','cl01',5.45,5);          // 5*b01
+('co01',1,5.45,5);          // 5*b01
 
 /* donnée des ventes de chaque produits */
 
