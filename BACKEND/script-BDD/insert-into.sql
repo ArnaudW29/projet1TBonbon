@@ -21,7 +21,7 @@ VALUES
 ('b02','Shtroumpfs Pik','','citrique',1.09,100,'m01'),  //haribo
 ('b03','Pêche','pêche','sucrés',1.09,100,'m01'),        //haribo
 ('b04','Fraise','fraise','gelatine',1.09,100 ,'m01'),    //haribo
-('b05','cola ciric','cola','citrique',0.69,100,'m01'),  //haribo
+('b05','cola ciric','cola','citrique',1.69,100,'m01'),  //haribo
 ('b06','Petits dragibus','multi-parfum','gelatine',1.09,100,'m01'), //haribo
 ('b07','Dents dracula','','gelatine',1.57,100,'m05'),   //Astra
 ('b08','Spaghetti citric','cola','citrique',9.55,1000,'m10'), //Sweet Party
