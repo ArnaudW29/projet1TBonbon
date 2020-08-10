@@ -1,5 +1,5 @@
 
-CREATE PROCEDURE "dba"."proc_deleteConnexions(in Id char(4))
+CREATE PROCEDURE "dba"."proc_deleteConnexions(in Id INTEGER)
 BEGIN 
     delete from tbConnexions
     where clientId=Id;
