@@ -6,7 +6,7 @@ CREATE TABLE tbMarque(
   );
      /* Table contenant les informations du client */
    CREATE TABLE tbClient(
-     clientId CHAR(4) NOT NULL, /* cl01,cl02, cl03 , cl04 */
+     clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
      clientNom VARCHAR(30) NOT NULL, /* DUPONT , DUBOIS */
      clientPrenom VARCHAR(30) NOT NULL, /* DENIS, LOIC */
      clientAdresse VARCHAR(80) NOT NULL, /* rue du panier 24 1460 belgique */
@@ -18,7 +18,7 @@ CREATE TABLE tbMarque(
      
      /* table des connexions */
      CREATE TABLE tbConnexions(
-     clientId CHAR(4) NOT NULL, /* cl01,cl02,cl03,cl04 */
+     clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
      clientMdp VARCHAR(20) NOT NULL, /* admin1234 */
      clientIdentifiant VARCHAR(50) NOT NULL,
      connexionsDate datetime NOT NULL DEFAULT getDate(),
@@ -42,7 +42,7 @@ CREATE TABLE tbMarque(
      /* Table contenant l'historique des commandes de l'utilisateur */
     CREATE TABLE tbCommandes(
        commandesId CHAR(4) NOT NULL , /* co01, co02, co03, co04 */
-       clientId CHAR(4) NOT NULL,  /* cl01,cl02, cl03 , cl04 */
+       clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
        commandesPrixTOT DECIMAL(6,2) NOT NULL,
        commandesQteTOT INTEGER NOT NULL,
        commandesDate datetime NOT NULL DEFAULT getDate(),
@@ -52,7 +52,7 @@ CREATE TABLE tbMarque(
        );
      /* Table contenant les informations du panier de l'utilisateur */
    CREATE TABLE tbPanier(
-     clientId CHAR(4) NOT NULL,     /* cl01, cl02, cl03, cl04 */
+     clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
      bonbonId CHAR(3) NOT NULL,     /* b01,b02,b03,b04 */
      panierQte INTEGER NOT NULL,
      CONSTRAINT fk_tbPanier_tbBonbon FOREIGN KEY (bonbonId) REFERENCES tbBonbon (bonbonId),
