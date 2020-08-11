@@ -11,7 +11,6 @@ function initBonbon() { // Initialise la page avec le catalogue de bonbon
             let c= "";
             for(let i of rep){
                 c++
-                console.log(c)
                 if(c > 4)
                 {
 
@@ -29,7 +28,7 @@ function initBonbon() { // Initialise la page avec le catalogue de bonbon
                     "<span class='QteBonbon'>"+ i.bonbonQte +"</span><br>" +
                     "<span class='prixBonbon'>"+ i.bonbonPrix + "€</span></div>" +
                     "<div id='formAjout"+i.bonbonId+"'>" +
-                    "<form action='#' onsubmit='ajoutBonbon("+'"'+i.biere+'","'+i.id+'","'+i.brasserie+'",'+i.volume+',this.qtt.value'+','+i.prix+"); return false;'>" +
+                    "<form action='#' onsubmit='ajoutBonbon("+'"'+i.bonbonNom+'","'+i.bonbonId+'","'+i.marqueNom+'","'+i.bonbonQte+'",this.qtt.value'+','+i.bonbonPrix+"); return false;'>" +
                     "<input id='input"+i.bonbonId+"'  class='cbBonbon' name='qtt' type='number' min='1' value='0' step='1'>" +
                     "<input type='submit' value='Ajouter' class='ajoutBonbon'></form></div></div>";
             }
