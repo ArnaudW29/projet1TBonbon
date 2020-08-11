@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="js/connexion.js"></script>
+    <script src="js/bonbon.js"></script>
     <title>Historique de commande</title>
 </head>
-<body>
+<body onload="connexion();storedCo();">
 <!-- page entière -->
 <div id="container">
     <!-- en tête de page -->
@@ -39,6 +41,33 @@
             </ul>
         </nav>
     </header>
+    <div class="ContentPrincipale">
+        <!-- formulaire de connexion -->
+                <div class="connexion">
+                        <section>
+                            <p id="textco2">
+                                Si vous avez <strong>deja</strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href="inscription.html" class="inscription">ici</a></strong>.
+                            </p>
+                            <div id="connexion">
+
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- connexion client & deco -->
+    <div class="clientConnected">
+        <p id="clientConnected">
+
+        </p>
+    </div>
+<div class="deconnexion">
+    <p id="deconnexion">
+
+    </p>
+</div>
 </div>
     <div>
         <!-- Footer -->

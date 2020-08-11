@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/css.css">
+    <script src="js/connexion.js"></script>
+    <script src="js/bonbon.js"></script>
     <title>Accueil</title>
 </head>
-<body>
+<body onload="connexion();storedCo();">
     <!-- page entière -->
     <div id="container">
         <!-- en tête de page -->
@@ -61,6 +63,39 @@
                     Voici le <strong><a href="https://github.com/ArnaudW29/projet1TBonbon" class="github" target="_blank">github</a></strong> du site.
                 </p>
             </section>
+            <!-- formulaire de connexion -->
+            <div class="Connexion">
+                <section>
+                    <p id="textco2">
+                        Si vous avez <strong>deja</strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href="inscription.html" class="inscription">ici</a></strong>.
+                    </p>
+                    <div id="connexion">
+                        <form id="formulaire_connexion" action=# onsubmit="connexionCommande(this); return false;">
+                                <!-- Identifiant -->
+                                <label for="identifiant">Identifiant : </label>
+                                <input id="identifiant" name="identifiant" type="text" required placeholder="Admin">
+                                <br>
+                                <!-- mdp du client-->
+                                <label for="mdp">Mot de passe : </label>
+                                <input id="mdp" name="mdp" type="password" required placeholder="password">
+                                <br>
+                                <!-- Bouton de connexion -->
+                                <input id="boutonConnexion" class="boutonConnexion" type="submit" value="Connexion">
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- connexion client & deco -->
+        <div class="clientConnected">
+            <p id="clientConnected">
+
+            </p>
+        </div>
+        <div class="deconnexion">
+            <p id="deconnexion">
+
+            </p>
         </div>
     </div>
     <div>

@@ -3,6 +3,8 @@
         <head>
             <meta charset="UTF-8">
             <link rel="stylesheet" type="text/css" href="css/css.css">
+            <script src="js/connexion.js"></script>
+            <script src="js/bonbon.js"></script>
             <title>Inscription</title>
         </head>
 <body>
@@ -39,6 +41,59 @@
             </ul>
         </nav>
     </header>
+    <!-- contenu principale -->
+    <div class="ContentPrincipale">
+        <!-- formulaire de connexion -->
+        <div class="ConnexionInscription">
+            <section>
+                <p id="textco3">
+                    Voici le formulaire d'<strong>inscription</strong>.
+                </p>
+                <div id="inscription">
+                    <form id="formInscription" action=# onsubmit="envoisInscription();return false;">
+                        <!-- Identifiant -->
+                        <label for="identifiantInscr">Votre identifiant : </label>
+                        <input id="identifiantInscr" name="identifiant" type="text" required placeholder="username">
+                        <br>
+                        <!-- mdp du client -->
+                        <label for="mdpInscr">Votre mot de passe : </label>
+                        <input id="mdpInscr" name="mdp" type="password" required placeholder="password">
+                        <br>
+                        <!-- email du client -->
+                        <label for="emailInscr">Votre email : </label>
+                        <input id="emailInscr" name="email" type="email" required placeholder="anne.dupont@hotmail.com">
+                        <br>
+                        <!-- prenom du client -->
+                        <label for="prenomInscr">Votre prénom : </label>
+                        <input id="prenomInscr" name="prenom" type="text" required placeholder="Anne">
+                        <br>
+                        <!-- nom du client -->
+                        <label for="nomInscr">Votre nom : </label>
+                        <input id="nomInscr" name="nom" type="text" required placeholder="Dupont">
+                        <br>
+                        <!-- adresse du client -->
+                        <label for="adrInscr">Votre adresse : </label>
+                        <input id="adrInscr" name="adresse" type="text" required placeholder="rue du puits 24 1460 Belgique">
+                        <br>
+                        <!-- bouton d'inscription -->
+                        <input id="boutonInscription" class="boutonInscription" type="submit" value="Inscription">
+
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- connexion client & deco -->
+    <div class="clientConnected">
+        <p id="clientConnected">
+
+        </p>
+    </div>
+    <div class="deconnexion">
+        <p id="deconnexion">
+
+        </p>
+    </div>
 </div>
     <div>
         <!-- Footer -->
