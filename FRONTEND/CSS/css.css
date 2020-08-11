@@ -58,21 +58,244 @@ nav a:active{
     text-align: center;
     text-decoration: none;
 }
-.mail,.ephec,.github {
+.mail,.ephec,.github,.inscription {
     text-decoration: none;
     color: darkblue;
 }
-.mail:hover,.ephec:hover,.github:hover{
+.mail:hover,.ephec:hover,.github:hover, .inscription:hover{
     color: darkred;
 }
 footer{
     position:absolute;
     font-style: italic;
     text-align: center;
-    bottom: 0;left:0;right:0;
+    left:0;right:0;
     width: 100%;
 }
 #imgSucette {
     width: 29px;
 }
+.boutonConnexion,.boutonInscription{
+    margin-top: 10px;
+    margin-left: 15%;
+    margin-right: 17%;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgb(252,245,193);
+    border-radius:2em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align: right;
+    transition: all 0.2s ease-out;
+    background-color: rgb(144,206,195);
+    height: 30px;
+}
+.ajoutBonbon{
+    display:inline-block;
+    border:0.16em solid rgb(252,245,193);
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align: right;
+    transition: all 0.2s ease-out;
+    background-color: rgb(144,206,195);
+}
+.boutonConnexion:hover,.boutonConnexion:focus,.boutonInscription:hover,.boutonInscription:focus,.ajoutBonbon:hover,.ajoutBonbon:focus,.boutonDeconnexion:hover,.boutonDeconnexion:focus{
+    color: #333333;
+    background-color: #FFFFFF;
+    border-color: #333333;
+}
+.boutonConnexion:active,.boutonInscription:active,.ajoutBonbon:active{
+    box-shadow: none;
+    outline: none;
+    color: #FFFFFF;
+    background-color: rgb(144,206,195);
+    border:0.16em solid rgb(252,245,193);
+}
+.boutonDeconnexion{
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid darkred;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s ease-out;
+    background-color: red;
+}
+#clientConnected{
+    font-style: italic;
+}
+.boutonDeconnexion:active{
+    box-shadow: none;
+    outline: none;
+}
+label {
+    float: left;
+    clear: left;
+    margin-left: 35%;
+}
+#mdp, #identifiant,#identifiantInscr,#mdpInscr,#emailInscr,#prenomInscr,#nomInscr,#adrInscr{
+    margin-top: 7px;
+    width: 179px;
+    text-align: center;
+    float: right;
+    clear: right;
+    margin-right: 39%;
+}
 
+#connexion{
+    margin-bottom: 100px;
+}
+div#bonbon {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    clear: both;
+    width: initial;
+    margin: 0.5em;
+    padding: 5em 15em 5em 20em;
+}
+.sectionUnBonbon1,.sectionUnBonbon2 , .sectionUnBonbon3, .sectionUnBonbon4 {
+    border: solid 1px black;
+    margin: 0.25em;
+    text-align: center;
+    width: 15em;
+    padding: 0.25em;
+    position: relative;
+    height: auto;
+}
+.sectionUnBonbon1{
+    background-color: rgb(238,127,178);
+}
+.sectionUnBonbon2{
+    background-color: rgb(252,245,193);
+}
+.sectionUnBonbon3{
+    background-color: rgb(144,206,195);
+}
+.sectionUnBonbon4{
+    background-color: rgb(245,200,133);
+}
+.sectionUnBonbon1 img,.sectionUnBonbon2 img, .sectionUnBonbon3 img, .sectionUnBonbon4 img{
+    width: 130px;
+    border: solid 2px black;
+}
+
+.sectionUnBonbon1 input[type='number'],.sectionUnBonbon2 input[type='number'] , .sectionUnBonbon3 input[type='number'], .sectionUnBonbon4 input[type='number']{
+    width:40px;
+}
+
+.nomBonbon,.marqueBonbon{
+    font-family: fantasy;
+}
+.marqueBonbon{
+    font-style: italic;
+}
+.info{
+    color: black;
+    padding: 0.25em;
+}
+.boutonCommander{
+    margin-top: 10px;
+    margin-left: 40%;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid rgb(252,245,193);
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align: right;
+    transition: all 0.2s ease-out;
+    background-color: rgb(144,206,195);
+    height: 30px;
+}
+.boutonCommander:hover,.boutonCommander:active,.boutonSuppr:active,.boutonSuppr:hover{
+    color: #333333;
+    background-color: #FFFFFF;
+    border-color: #333333;
+}
+.boutonCommander:active {
+    box-shadow: none;
+    outline: none;
+}
+.boutonSuppr {
+    margin-left: 22.5%;
+    display:inline-block;
+    padding:0.3em 1.2em;
+    border:0.16em solid darkred;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+    text-align:center;
+    transition: all 0.2s ease-out;
+    background-color: red;
+}
+.boutonSuppr:active{
+    color: #333333;
+    background-color: #FFFFFF;
+    border-color: #333333;
+}
+#tabPanier{
+    text-align: center;
+    empty-cells: hide;
+    border: black solid 1px;
+    border-collapse: collapse;
+    padding: 5em;
+    margin : auto;
+}
+legend{
+    text-align: center;
+    border: gray 1px solid;
+}
+
+.vide td {
+    border:none;
+}
+
+.Somme {
+    text-align: right;
+    font-weight: bold;
+    color: black;
+
+}
+#prixtot {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    margin-left: 44%;
+}
+#panierVide{
+    text-align: center;
+    color: darkblue;
+    font-size: 25px;
+    font-family: Leelawadee, Impact, sans-serif;
+}
+#panierVide2{
+    text-decoration: none;
+}
+#panierVide2:hover{
+    color: darkred;
+}
+#imageSuppression {
+    background-image: url('../img/vector-cancel-icon.jpg');
+    background-repeat: no-repeat;
+    width: 36px;
+    height: 36px;
+}
