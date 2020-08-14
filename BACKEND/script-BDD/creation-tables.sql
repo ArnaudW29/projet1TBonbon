@@ -6,15 +6,15 @@ CREATE TABLE tbMarque(
   );
      /* Table contenant les informations du client */
    CREATE TABLE tbClient(
-     clientId INTEGER NOT NULL DEFAULT AUTOINCREMENT, /* 1,2, 3 , 4 (init a 4pour les test)
+     clientId INTEGER NOT NULL DEFAULT AUTOINCREMENT, /* 1,2, 3 , 4 (init a 4pour les test) */
      clientNom VARCHAR(30) NOT NULL, /* DUPONT , DUBOIS */
      clientPrenom VARCHAR(30) NOT NULL, /* DENIS, LOIC */
      clientAdresse VARCHAR(80) NOT NULL, /* rue du panier 24 1460 belgique */
      clientIdentifiant VARCHAR(50) NOT NULL, /* admin */
      clientMdp VARCHAR(20) NOT NULL, /* admin1234 */
      clientMail VARCHAR(70) NOT NULL,  /* DUPONT.loic@hotmail.com */
-     CONSTRAINT pk_Client PRIMARY KEY (clientId)
-     CONSTRAINT "pk_tbClientIdentifiant" UNIQUE ( "clientIdentifiant" ASC)
+     CONSTRAINT pk_Client PRIMARY KEY (clientId),
+     CONSTRAINT "pk_tbClientIdentifiant" UNIQUE ( "clientIdentifiant" ASC),
      CONSTRAINT "pk_tbClientMail" UNIQUE ( "clientMail" ASC)
      );
      
