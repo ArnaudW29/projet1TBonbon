@@ -15,6 +15,7 @@ CREATE TABLE tbMarque(
      clientMail VARCHAR(70) NOT NULL,  /* DUPONT.loic@hotmail.com */
      CONSTRAINT pk_Client PRIMARY KEY (clientId)
      CONSTRAINT "pk_tbClientIdentifiant" UNIQUE ( "clientIdentifiant" ASC)
+     CONSTRAINT "pk_tbClientMail" UNIQUE ( "clientMail" ASC)
      );
      
      /* table des connexions */
