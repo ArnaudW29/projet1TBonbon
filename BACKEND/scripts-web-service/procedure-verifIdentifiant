@@ -4,7 +4,7 @@ RESULT(identifiant VARCHAR(50))
 BEGIN
     call sa_set_http_header('Access-Control-Allow-Origin','*');
     call sa_set_http_header('Content-Type','application/json');
-    select clientIdentifiant from tbClients
+    select clientIdentifiant from tbClient
     where id = clientIdentifiant 
 END;
 
