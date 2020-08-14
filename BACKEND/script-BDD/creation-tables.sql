@@ -43,7 +43,7 @@ CREATE TABLE tbMarque(
        );
      /* Table contenant l'historique des commandes de l'utilisateur */
     CREATE TABLE tbCommandes(
-       commandesId CHAR(4) NOT NULL , /* co01, co02, co03, co04 */
+       commandesId INTEGER , /* 1,2,3,4 */
        clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
        commandesPrixTOT DECIMAL(6,2) NOT NULL,
        commandesQteTOT INTEGER NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE tbMarque(
      );
       /* Table contenant les informations de la commande de l'utilisateur */
     CREATE TABLE tbVentes(
-      commandesId CHAR(4) NOT NULL, /* co01, co02, co03, co04 */
+      commandesId INTEGER NOT NULL , /* 1, 2, 3, 4 */
       bonbonId CHAR(3) NOT NULL, /* b01,b02,b03,b04 */
       ventesNum INTEGER NOT NULL,
       ventesQte INTEGER NOT NULL,
