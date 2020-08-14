@@ -4,7 +4,7 @@ RESULT(identifiant VARCHAR(50), mdp VARCHAR(20), clientId INTEGER)
 BEGIN
     call sa_set_http_header('Access-Control-Allow-Origin','*');
     call sa_set_http_header('Content-Type','application/json');
-    select clientMdp, clientIdentifiant, clientId from tbClients
+    select clientMdp, clientIdentifiant, clientId from tbClient
     where id = clientIdentifiant AND mdp = clientMdp
 END;
 
