@@ -50,10 +50,12 @@
                     Voici le formulaire d'<strong>inscription</strong>.
                 </p>
                 <div id="inscription">
-                    <form id="formInscription" action=# onsubmit="envoisInscription();return false;">
+                    <form id="formInscription" action=# onsubmit="envoisInscription(this);return false;">
                         <!-- Identifiant -->
                         <label for="identifiantInscr">Votre identifiant : </label>
-                        <input id="identifiantInscr" name="identifiant" type="text" required placeholder="username">
+                        <input id="identifiantInscr" name="identifiant" type="text" required placeholder="username" onchange="verifIdentifiant(this.value)">
+                        <div id="verifBad"></div>
+                        <div id="verifGood"></div>
                         <br>
                         <!-- mdp du client -->
                         <label for="mdpInscr">Votre mot de passe : </label>
@@ -61,7 +63,9 @@
                         <br>
                         <!-- email du client -->
                         <label for="emailInscr">Votre email : </label>
-                        <input id="emailInscr" name="email" type="email" required placeholder="anne.dupont@hotmail.com">
+                        <input id="emailInscr" name="email" type="email" required placeholder="anne.dupont@hotmail.com" onchange="verifMail(this.value)">
+                        <div id="verifMailBad"></div>
+                        <div id="verifMailGood"></div>
                         <br>
                         <!-- prenom du client -->
                         <label for="prenomInscr">Votre prénom : </label>

@@ -7,7 +7,7 @@
     <script src="js/bonbon.js"></script>
     <title>Historique de commande</title>
 </head>
-<body onload="connexion();storedCo();">
+<body onload="connexionHistorique();storedCoHistorique();loadHisto()">
 <!-- page entière -->
 <div id="container">
     <!-- en tête de page -->
@@ -52,6 +52,8 @@
 
                             </div>
                         </section>
+                    <div id="recivComm">
+                    </div>
                     </div>
                 </div>
             </section>
@@ -63,6 +65,7 @@
 
         </p>
     </div>
+
 <div class="deconnexion">
     <p id="deconnexion">
 
