@@ -5,7 +5,7 @@ Voici le repository pour mon projet de confiserie en ligne.
 
  ![Image de l'ephec](https://i.imgur.com/k1pB47i.png?1)
 ## Présentation :  
-Je suis eleve en 1TI de l'[Ephec](https://www.ephec.be/)
+Je suis un eleve en 1TI de l'[Ephec](https://www.ephec.be/)
 * [WAETERMANS Arnaud](https://github.com/ArnaudW29) 1TM2
 ## Description :
 Site de commande de bonbon en ligne.
@@ -14,7 +14,7 @@ Site de commande de bonbon en ligne.
 * Un formulaire pour ce connecter au site et acceder a son panier.
 ### FONCTIONNALITES SECONDAIRES : 
 * Le prix d'achat.
-* Trier par types de bonbons
+* Restez connecté au site page en page 
 ## Aspects implémentés :
 * **backend** : Une base de données avec les informations de chaque bonbon et le prix de chaque bonbon.
 * **backend** : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices
