@@ -155,7 +155,7 @@ label {
 }
 
 #connexion{
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 div#bonbon {
     display: flex;
@@ -164,7 +164,7 @@ div#bonbon {
     clear: both;
     width: initial;
     margin: 0.5em;
-    padding: 5em 15em 5em 20em;
+    padding:0em 15em 5em 20em;
 }
 .sectionUnBonbon1,.sectionUnBonbon2 , .sectionUnBonbon3, .sectionUnBonbon4 {
     border: solid 1px black;
@@ -208,7 +208,7 @@ div#bonbon {
 }
 .boutonCommander{
     margin-top: 10px;
-    margin-left: 40%;
+    margin-left: 57%;
     display:inline-block;
     padding:0.3em 1.2em;
     border:0.16em solid rgb(252,245,193);
@@ -252,14 +252,7 @@ div#bonbon {
     background-color: #FFFFFF;
     border-color: #333333;
 }
-#tabPanier{
-    text-align: center;
-    empty-cells: hide;
-    border: black solid 1px;
-    border-collapse: collapse;
-    padding: 5em;
-    margin : auto;
-}
+
 legend{
     text-align: center;
     border: gray 1px solid;
@@ -279,7 +272,7 @@ legend{
     text-align: center;
     font-weight: bold;
     color: red;
-    margin-left: 44%;
+    margin-left: 80%;
 }
 #panierVide{
     text-align: center;
@@ -298,4 +291,107 @@ legend{
     background-repeat: no-repeat;
     width: 36px;
     height: 36px;
+}
+.error {
+    color: red;
+}
+#verifBad{
+    color: red;
+    display: inline;
+    font-size: 15px;
+    position: absolute;
+    right: 28%;
+    top: 26.75%;
+}
+#verifGood{
+    color: green;
+    display: inline;
+    font-size: 15px;
+    position: absolute;
+    right: 28%;
+    top: 26.75%;
+}
+#verifMailGood{
+    color: green;
+    display: inline;
+    font-size: 15px;
+    position: absolute;
+    right: 25%;
+    top: 33.60%;
+}
+#verifMailBad{
+    color: red;
+    display: inline;
+    font-size: 15px;
+    position: absolute;
+    right: 25%;
+    top: 33.60%;
+}
+table.tableCommande {
+    border: 2px solid black;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+table.tableCommande td, table.tableCommande th {
+    border: 0.2px  solid black;
+    padding: 3px 4px;
+}
+table.tableCommande tbody td {
+    font-size: 20px;
+}
+table.tableCommande thead {
+    background: rgb(252,245,193);
+    border-bottom: 4px solid #333333;
+}
+table.tableCommande thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    border-left: 2px solid #333333;
+}
+table.tableCommande thead th:first-child {
+    border-left: none;
+}
+
+table.tableCommande details{
+    text-align: left;
+}
+
+table#tabPanier tbody td {
+    font-size: 20px;
+}
+table#tabPanier thead {
+    background: rgb(144,206,195);
+    border-bottom: 4px solid #333333;
+}
+table#tabPanier thead th {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+    border-left: 2px solid #333333;
+}
+table#tabPanier {
+    border: 2px solid black;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+table#tabPanier td, table#tabPanier th {
+    padding: 3px 4px;
+}
+table#tabPanier thead th:first-child {
+    border-left: none;
+}
+table#tabPanier details{
+    text-align: left;
+}
+#tabPanier{
+    font-family: Leelawadee, Impact, sans-serif;
+    font-size: 25px;
+    color: darkblue;
+    text-align: center;
+    text-decoration: none;
 }
