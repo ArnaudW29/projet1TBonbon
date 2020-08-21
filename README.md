@@ -20,7 +20,7 @@ Site de commande de bonbon en ligne.
 * **backend** : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices
 * **backend** : Des webservices (avec les procédures associées) :
 	* Un webservice permettant la connexion de l'utilisateur.
-	* Un webservice permettant de trier les bonbons en fonction de son type .
+	* Un webservice permettant de verifier si le mail et nom d'utilisateur existe deja
 	* Un webservice permettant d'afficher le nom de chaque bonbons.
 	* Un webservice permettant de stocker les commandes.
 * **frontend** : Une page web (html, js, css) permettant d'appeler les webservices et de traiter les réponses, les utilisants pour modifier la page: 	
