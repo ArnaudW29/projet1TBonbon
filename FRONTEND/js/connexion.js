@@ -71,17 +71,7 @@ function envoisInscription(form){
     xhr.send();
 }
 
-function envoisConnexion(){
-    let xhr = new XMLHttpRequest();
-    xhr.open('get','proc_insertConnexion?Id='+clientClient.clientId+'&Mdp='+clientClient.mdp+'&Identifiant='+clientClient.identifiant);
-    xhr.onload =
-        function() {
-        };
-    xhr.onerror=function (){
-        alert("xhr error");
-    };
-    xhr.send();
-}
+
 function rem(){
     gid('textco2').innerText ="";
 }
@@ -121,7 +111,6 @@ function connexionPanier(){
         }
         else{
             console.log(clientClient);
-            envoisConnexion();
             storeConnexion();
             loadpanier();
             gid("connexion").innerHTML="";
@@ -140,7 +129,6 @@ function connexionPanier(){
         }
         else{
             console.log(clientClient);
-            envoisConnexion();
             storeConnexion();
             gid("connexion").innerHTML="";
             gid('textco2').innerHTML = "";
@@ -182,7 +170,7 @@ function ajoutBonbon(bonbonNom,bonbonId,marqueNom,bonbonQte,qtt){
     alert("L'article a été ajouté a votre panier")
 }
 function checkFirstVisit() {
-    if(document.cookie.indexOf('mycookie')==-1) {
+    if(document.cookie.indexOf('mycookie')===-1) {
         // cookie doesn't exist, create it now
         document.cookie = "test";
     }
@@ -255,16 +243,6 @@ let commandesId = "";
     xhr.onload = function(){
     };
     xhr.send();
-
-   for(let x=0;x < panierNbr ; x++){
-       console.log(x)
-       xhr = new XMLHttpRequest();
-       xhr.open('get','proc_insertVentes?commId='+commandesId+'&bnId='+panierHisto[x].bonbonId+'&ventesN='+count+'&ventesQtt=' +panierHisto[x].QttBonbon,false);
-       xhr.onload = function (){
-       };
-       xhr.send();
-       count++
-   }
     videPanier(clientId);
    gid('panierVide').innerHTML = "Votre commande est passée, si vous voulez commander de nouveau, cliquez "+"<strong>"+"<a href='bonbon.html' id='panierVide2'>"+"ICI"+"</a>"+"</strong>";
 }
@@ -278,7 +256,6 @@ function Historique(){
         }
         else{
             console.log(clientClient);
-            envoisConnexion();
             storeConnexion();
             getHisto();
             gid("connexion").innerHTML="";
