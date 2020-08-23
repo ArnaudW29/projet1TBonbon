@@ -25,8 +25,8 @@ Site de commande de bonbon en ligne.
 ### -tbBonbon :
 Il s'agit de la table avec les informations du bonbon.  
 pk = bonbonId  
-fk = marqueId > tbMarque.marqueId  
-Cette table comporte 6 colonnes :
+fk = marqueId > tbMarque.marqueId    
+Cette table comporte **6** colonnes :
 * **bonbonId** qui est un char (3).
 * **bonbonNom** qui est un varchar (45) regroupant les noms des bonbons.
 * **bonbonType** qui est un varchar (15) regroupant les différents types des bonbons.
@@ -36,7 +36,7 @@ Cette table comporte 6 colonnes :
 ### -tbMarque : 
 Il s'agit de la table avec les id et noms des marques  
 pk = marqueId  
-Cette table comporte 2 colonnes :
+Cette table comporte **2** colonnes :
 * **marqueId** qui est un char (3).
 * **marqueNom** qui est un varchar (30) regroupant les nom des marques.
 ### -tbClient :
@@ -44,7 +44,7 @@ Cette table comporte 2 colonnes :
  pk = clientId  
  clé d'unicite = clientIdentifiant (evite doublons d'indentifiant meme si pas la même id)  
  clé d'unicite = clientMail (evite doublons de mail meme si pas la même id)  
- Cette table comporte 7 colonnes :
+ Cette table comporte **7** colonnes :
  * **clientId** qui est un integer AUTOINCREMENT. 
  * **clientNom** qui est un varchar (30) qui regroupe les noms des clients.
  * **clientPrenom** qui est un varchar (30) qui regroupe les prenoms des clients.
@@ -56,7 +56,7 @@ Cette table comporte 2 colonnes :
  Il s'agit de la table avec les historique de commande de chaque client  
  pk = commandesId  
  fk = clientId > tbclient.clientId  
- Cette table comporte 5 colonnes :
+ Cette table comporte **5** colonnes :
  * **commandesId** qui est un integer.
  * **clientId** qui est un integer.
  * **commandesQte** qui est un integer avec le nombre de paquet de bonbon commande.
@@ -66,7 +66,7 @@ Cette table comporte 2 colonnes :
  Il s'agit de la table avec le panier de chaque client  
  fk = bonbonId > tbBonbon.bonbonId  
  fk = clientId > tbClient.ClientId  
- Cette table comporte 3 colonnes :
+ Cette table comporte **3** colonnes :
  * **clientId** qui est un integer.
  * **bonbonId** qui est un char (3) avec l'id des bonbons.
  * **panierQte** qui est un integer avec le nombre de chaque bonbon dans le panier
