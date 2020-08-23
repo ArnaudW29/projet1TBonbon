@@ -15,19 +15,19 @@ VALUES
 
 /* donnée des bonbons */
 
-INSERT INTO tbBonbon(bonbonId,bonbonNom,bonbonGout,bonbonType,bonbonPrix,bonbonQte,marqueId)
+INSERT INTO tbBonbon(bonbonId,bonbonNom,bonbonType,bonbonPrix,bonbonQte,marqueId)
 VALUES
-('b01','Petits Shtroumpfs','','gelatine',1.09,100,'m01'), //haribo
-('b02','Shtroumpfs Pik','','citrique',1.09,100,'m01'),  //haribo
-('b03','Pêche','pêche','sucrés',1.09,100,'m01'),        //haribo
-('b04','Fraise','fraise','gelatine',1.09,100 ,'m01'),    //haribo
-('b05','cola ciric','cola','citrique',1.69,100,'m01'),  //haribo
-('b06','Petits dragibus','multi-parfum','gelatine',1.09,100,'m01'), //haribo
-('b07','Dents dracula','','gelatine',1.57,100,'m05'),   //Astra
-('b08','Spaghetti citric','cola','citrique',9.55,1000,'m10'), //Sweet Party
-('b09','Escargot citric','cola','citrique',1.09,100,'m04'), //Geldhof
-('b10','Cerise double','cerise','gelatine',1.09,100,'m01'), //haribo
-('b11','Orque bleu','','gelatine',1.55,100,'m05'); //astra
+('b01','Petits Shtroumpfs','gelatine',1.09,100,'m01'), //haribo
+('b02','Shtroumpfs Pik','citrique',1.09,100,'m01'),  //haribo
+('b03','Pêche','sucrés',1.09,100,'m01'),        //haribo
+('b04','Fraise','gelatine',1.09,100 ,'m01'),    //haribo
+('b05','cola ciric','citrique',1.69,100,'m01'),  //haribo
+('b06','Petits dragibus','gelatine',1.09,100,'m01'), //haribo
+('b07','Dents dracula','gelatine',1.57,100,'m05'),   //Astra
+('b08','Spaghetti citric','citrique',9.55,1000,'m10'), //Sweet Party
+('b09','Escargot citric','citrique',1.09,100,'m04'), //Geldhof
+('b10','Cerise double','gelatine',1.09,100,'m01'), //haribo
+('b11','Orque bleu','gelatine',1.55,100,'m05'); //astra
 
 
 /* donnée des clients (test)*/
@@ -44,9 +44,3 @@ VALUES
 INSERT INTO tbCommandes(commandesId,clientId,commandesPrixTOT,commandesQteTOT)
 VALUES
 ('co01',1,5.45,5);          // 5*b01
-
-/* donnée des ventes de chaque produits */
-
-INSERT tbVentes(commandesId,bonbonId,ventesNum,ventesQte)
-VALUES
-('co01','b01',1,5);
