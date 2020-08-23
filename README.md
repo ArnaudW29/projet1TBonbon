@@ -23,9 +23,9 @@ Site de commande de bonbon en ligne.
 ![image du shema relatioinnel](https://i.imgur.com/YX45rDH.png)
 ## Détail DB : 
 ### -tbBonbon :
-Il s'agit de la table avec les informations du bonbon.
-pk = bonbonId
-fk = marqueId > tbMarque.marqueId
+Il s'agit de la table avec les informations du bonbon.  
+pk = bonbonId  
+fk = marqueId > tbMarque.marqueId  
 Cette table comporte 7 colonnes :
 * **bonbonId** qui est un char (3).
 * **bonbonNom** qui est un varchar (45) regroupant les noms des bonbons.
@@ -34,13 +34,13 @@ Cette table comporte 7 colonnes :
 * **bonbonPrix** qui est un decimal(4,2) regroupant le prix des différents bonbons.
 * **marqueId** qui est un integer regroupant l'id des marques de bonbon.
 ### -tbMarque : 
-Il s'agit de la table avec les id et noms des marques
-pk = marqueId
+Il s'agit de la table avec les id et noms des marques  
+pk = marqueId  
 * **marqueId** qui est un char (3).
 * **marqueNom** qui est un varchar (30) regroupant les nom des marques.
 ### -tbClient :
- Il s'agit de la table avec les infromations des clients.
- pk = clientId 
+ Il s'agit de la table avec les infromations des clients.  
+ pk = clientId  
  clé d'unicite = clientIdentifiant (evite doublons d'indentifiant meme si pas la même id)  
  clé d'unicite = clientMail (evite doublons de mail meme si pas la même id)  
  * **clientId** qui est un integer AUTOINCREMENT. 
@@ -51,18 +51,18 @@ pk = marqueId
  * **clientMdp** qui est un varchar (20) qui regroupe les mots de passes des clients.
  * **clientMail** qui est un varchar (70) qui regroupe les emails des clients.
  ### -tbCommandes : 
- Il s'agit de la table avec les historique de commande de chaque client
- pk = commandesId
- fk = clientId > tbclient.clientId
+ Il s'agit de la table avec les historique de commande de chaque client  
+ pk = commandesId  
+ fk = clientId > tbclient.clientId  
  * **commandesId** qui est un integer.
  * **clientId** qui est un integer.
  * **commandesQte** qui est un integer avec le nombre de paquet de bonbon commande.
  * **commandesDate** qui est un datetime avec la valeur getDate() cela permet d'avoir la date de quand le client a commande.
  * **commandesPrix** qui est un decimal(6,2) qui regroupe le prix total de la commande
  ### -tbPanier : 
- Il s'agit de la table avec le panier de chaque client
- fk = bonbonId > tbBonbon.bonbonId
- fk = clientId > tbClient.ClientId
+ Il s'agit de la table avec le panier de chaque client  
+ fk = bonbonId > tbBonbon.bonbonId  
+ fk = clientId > tbClient.ClientId  
  * **clientId** qui est un integer.
  * **bonbonId** qui est un char (3) avec l'id des bonbons.
  * **panierQte** qui est un integer avec le nombre de chaque bonbon dans le panier
