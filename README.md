@@ -9,6 +9,16 @@ Je suis un eleve en 1TI de l'[Ephec](https://www.ephec.be/)
 * [WAETERMANS Arnaud](https://github.com/ArnaudW29) 1TM2
 ## Description :
 Site de commande de bonbon en ligne.
+## Configuration de la DB : 
+* id utilisateur : **dba**
+* mdp utisateur  : **sql**
+* nom du serveur : **projetbonbon**
+* nom de la db   : **bonbon**  
+
+-serviceweb :
+* -n projetbonbon "C:\Users\lll\Desktop\projet\FRONTEND\bonbon.db"
+* -x tcpip
+* -xs http(port=82)
 ## Shema relationnel :
 ![image du shema relatioinnel](https://i.imgur.com/lrhi5MN.png)
 ### FONCTIONNALITES PRINCIPALES : 
