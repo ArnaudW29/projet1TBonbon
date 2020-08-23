@@ -9,6 +9,8 @@ Je suis un eleve en 1TI de l'[Ephec](https://www.ephec.be/)
 * [WAETERMANS Arnaud](https://github.com/ArnaudW29) 1TM2
 ## Description :
 Site de commande de bonbon en ligne.
+## Shema relationnel :
+![image du shema relatioinnel](https://prnt.sc/u4fl4a)
 ### FONCTIONNALITES PRINCIPALES : 
 * Mettre a disposition une liste de bonbon avec toutes les informations concernant le fabricant et produits.
 * Un formulaire pour ce connecter au site et acceder a son panier.
