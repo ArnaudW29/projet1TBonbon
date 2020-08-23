@@ -36,7 +36,7 @@ fk = marqueId > tbMarque.marqueId
 ### -tbMarque : 
 Il s'agit de la table avec les id et noms des marques  
 pk = marqueId  
-**Cette table comporte 2colonnes :**
+**Cette table comporte 2 colonnes :**
 * **marqueId** qui est un char (3).
 * **marqueNom** qui est un varchar (30) regroupant les nom des marques.
 ### -tbClient :
