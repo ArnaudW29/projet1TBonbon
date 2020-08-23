@@ -17,22 +17,10 @@ CREATE TABLE tbMarque(
      CONSTRAINT "pk_tbClientIdentifiant" UNIQUE ( "clientIdentifiant" ASC),
      CONSTRAINT "pk_tbClientMail" UNIQUE ( "clientMail" ASC)
      );
-     
-     /* table des connexions */
-     CREATE TABLE tbConnexions(
-     clientId INTEGER NOT NULL, /* 1,2, 3 , 4 */
-     clientMdp VARCHAR(20) NOT NULL, /* admin1234 */
-     clientIdentifiant VARCHAR(50) NOT NULL,
-     connexionsDate datetime NOT NULL DEFAULT getDate(),
-     
-     CONSTRAINT fk_tbConnexions_tbClient FOREIGN KEY (clientId) REFERENCES tbClient ( clientId));
-     
-     
       /* Table contenant les inforamations des bonbons*/
      CREATE TABLE tbBonbon(
        bonbonId CHAR(3) NOT NULL, /* b01,b02,b03,b04 */
        bonbonNom VARCHAR(45) NOT NULL, /* sucette a la pomme , sucette a la poire etc */
-       bonbonGout VARCHAR(15) NULL,
        bonbonType VARCHAR(15) NOT NULL, /* sucrés ,acidulés */
        bonbonPrix DECIMAL(4,2) NOT NULL,
        bonbonQte INTEGER NOT NULL, 
@@ -60,15 +48,5 @@ CREATE TABLE tbMarque(
      CONSTRAINT fk_tbPanier_tbBonbon FOREIGN KEY (bonbonId) REFERENCES tbBonbon (bonbonId),
      CONSTRAINT fk_tbPanier_tbClient FOREIGN KEY (clientId) REFERENCES tbClient (clientId)
      );
-      /* Table contenant les informations de la commande de l'utilisateur */
-    CREATE TABLE tbVentes(
-      commandesId INTEGER NOT NULL , /* 1, 2, 3, 4 */
-      bonbonId CHAR(3) NOT NULL, /* b01,b02,b03,b04 */
-      ventesNum INTEGER NOT NULL,
-      ventesQte INTEGER NOT NULL,
-      CONSTRAINT fk_tbVentes_tbBonbon FOREIGN KEY (bonbonId) REFERENCES tbBonbon (bonbonId) 
-      ON UPDATE CASCADE ON DELETE RESTRICT,
-      CONSTRAINT fk_tbVentes_tbCommandes FOREIGN KEY (commandesId) REFERENCES tbCommandes (commandesId)
-      ON UPDATE CASCADE ON DELETE RESTRICT
-      );
+
  
