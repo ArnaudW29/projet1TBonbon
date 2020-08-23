@@ -66,8 +66,39 @@ pk = marqueId
  * **clientId** qui est un integer.
  * **bonbonId** qui est un char (3) avec l'id des bonbons.
  * **panierQte** qui est un integer avec le nombre de chaque bonbon dans le panier
-
-
+## Détail API-REST :
+* **proc_insertCommandes(:commId,:clId,:commPrixTOT,:commQteTOT)**  
+*Procedure qui permet d'inserer les commandes dans la base de donnée.*
+* **insertInscription(:Nom,:Prenom,:Adresse,:Identifiant,:Mdp,:Mail)**
+*Procedure qui permet d'inserer les données de l'inscription du client dans la base de donnée.*
+* **proc_insertPanier(:id,:bId,:Qte)**
+*Procedure qui permet d'insert les données du panier dans la base de donnée.
+* **proc_suppressionPanier(:bId,:clId)**
+*Procedure qui permet de supprimer une ligne dans la table Panier.*
+* **proc_suppressionPanierComplet(:clId)**
+*Procedure qui permet de supprimer tout le panier d'un client (en fonction de son id).*
+* **proc_getCommandes(:commid)**
+*Procedure qui permet de recuperer les données de la tables commandes de la base de donée.*
+* **getConnexion(:id,:mdp)**
+*Procedure qui permet de recuperer les données de la table client pour la connexion.*
+* **proc_verifIdentifiant(:id)**
+*Procedure qui recupere l'id et regarde si il existe deja dans la base de donnée.*
+* **proc_verifMail(:Mail)**
+*Procedure qui recupere le mail et regarde si il existe deja dans la base de donnée.*
+* **proc_getCommandesId(:comId)**
+*Procedure qui recupere l'id des commandes de la base de donnée.*
+* **proc_getPanier(:Id)**
+*Procedure qui recupere les colonnes de la table panier en fonction de l'id du client.*
+* **initBonbon()**
+*Procedure qui recupere les colonnes de la table bonbon.*
+## TO DO LIST :
+* **backend** : 
+     * [x] Creer les tables SQL.
+     * [x] Creer les services web pour initialiser la page et gérer les requetes/interactions.
+     * [x] Creer les procédures pour charger les fichiers html/css/js ainsi que pour traiter les réponses et requetes.
+* **frontend** : 
+     * [x] Creer la page html et le css.
+     * [x] Creer un fichier js
 ### FONCTIONNALITES PRINCIPALES : 
 * Mettre a disposition une liste de bonbon avec toutes les informations concernant le fabricant et produits.
 * Un formulaire pour ce connecter au site et acceder a son panier.
