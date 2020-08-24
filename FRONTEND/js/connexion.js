@@ -155,6 +155,8 @@ function storeConnexion(){
     sessionStorage.setItem('identifiant',clientClient[0].identifiant);
 }
 /**
+ * @type {XMLHttpRequest}
+ * @result : introduit les param dans la table "tbPanier" dans la base de donnée
  * @param bonbonNom, nom du bonbon
  * @param bonbonId, id du bonbon
  * @param marqueNom, nom de la marque du bonbon
@@ -305,10 +307,11 @@ function loadHisto(){
     }
 }
 /**
+ * Envoit une requete HTTP XML afin d'aller supprimer une ligne du client dans la table "tbPanier"
+ * @type {XMLHttpRequest}
+ * @result : supprime une ligne de la table "tbPanier" dans la base de donnée en fonction de l'id du bonbon et du client connecté et affiche le panier du client sans la ligne qu'on viens de supprimer
  * @param bonbonId, id du bonbon
  * @param cId, id du client connecté sur le site
- * fonction qui supprime une ligne de la table "tbPanier" dans la base de donnée en fonction de l'id du bonbon et du client connecté
- * et affiche le panier du client sans la ligne qu'on viens de supprimer
  */
 function suppr(bonbonId,cId) {
     let xhr = new XMLHttpRequest();
@@ -320,9 +323,10 @@ function suppr(bonbonId,cId) {
     panier();
 }
 /**
+ * Envoit une requete HTTP XML afin d'aller supprimer toutes les lignes du client dans la table "tbPanier"
+ * @type {XMLHttpRequest}
+ * @result : supprime toutes les lignes de la table "tbPanier" dans la base de donnée en fonction de son id et qui affiche le panier vide du client
  * @param clientId, id du client connecté sur le site
- * fonction qui supprime toutes les lignes de la table "tbPanier" dans la base de donnée en fonction de son id
- * et qui affiche le panier vide du client
  */
 function videPanier(clientId){
     let xhr = new XMLHttpRequest();
@@ -368,8 +372,11 @@ function decoHisto(){
     connexionHistorique();
 }
 /**
+ * Fait une requete HTTP XML pour envoyer l'identifiant introduit par le client
+ * @type {XMLHttpRequest}
+ * @result : recois un array d'objet remplis si l'identifiant est deja utilisé sinon un array d'objet vide
  * @param identifiant, identifiant rentre dans le form par l'utilisateur
- * fonction qui verifie si l'identifaint entrée par l'utilisateur est deja dans la tbClient dans la base de donnée
+ * fonction qui verifie si l'identifaint entrée par l'utilisateur est deja dans la "tbClient" dans la base de donnée
  */
 function verifIdentifiant(identifiant){
     let xhr = new XMLHttpRequest();
@@ -390,8 +397,11 @@ function verifIdentifiant(identifiant){
 xhr.send();
 }
 /**
+ * Fait une requete HTTP XML pour envoyer le mail introduit par le client
+ * @type {XMLHttpRequest}
+ * @result : recois un array d'objet remplis si le mail est deja utilisé sinon un array d'objet vide
  * @param Mail, mail rentre dans le form par l'utilisateur
- * fonction qui verifie si le mail entrée par l'utilisateur est deja dans la tbClient dans la base de donnée
+ * fonction qui verifie si le mail entrée par l'utilisateur est deja dans la "tbClient" dans la base de donnée
  */
 function verifMail(Mail){
     let xhr = new XMLHttpRequest();
