@@ -1,4 +1,4 @@
-ALTER PROCEDURE "dba"."proc_getPanier"(in Id INTEGER)
+CREATE PROCEDURE "dba"."proc_getPanier"(in Id INTEGER)
 RESULT (bonbonId char(3), bonbonNom char(45), bonbonQte VARCHAR(15),bonbonPrix DECIMAL(4,2), QttBonbon INTEGER, prixTot DECIMAL(6,2),bonbonType VARCHAR(15),marqueNom VARCHAR(30))
 BEGIN 
     CALL sa_set_http_header('Access-Control-Allow-Origin','*');
@@ -18,4 +18,6 @@ BEGIN
     panier.bonbonId, bonbon.bonbonNom, bonbon.bonbonQte,bonbon.bonbonPrix, bonbon.bonbonType, marque.marqueNom
     ORDER BY 
     bonbon.BonbonNom;
-END
+END;
+------------------------/* service pour recevoir le panier */-----------------------------------
+CREATE SERVICE "proc_getPanier" TYPE 'JSON' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS CALL dba.proc_getPanier(:Id);
