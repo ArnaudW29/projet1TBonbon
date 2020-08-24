@@ -10,4 +10,4 @@ end;
 
  ------------------------------------/* Service pour recevoir l'historique en fonction de l'id de la commande*/---------------------------------------------------
 
-CREATE SERVICE "proc_getCommandes" TYPE 'JSON' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.proc_getCommandes(:commid);
+CREATE SERVICE "proc_getCommandes" TYPE 'JSON' AUTHORIZATION OFF USER "dba" URL ON METHODS 'GET' AS call dba.proc_getCommandes(:clId);
