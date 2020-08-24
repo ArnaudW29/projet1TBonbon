@@ -7,7 +7,7 @@ nav{
     background-image: url("../img/bg_flash.jpg");
 }
 h1, h2{
-     font-family: Leelawadee, Impact, sans-serif;
+     font-family: Leelawadee,sans-serif;
 }
 nav{
     position: relative;
@@ -33,7 +33,7 @@ nav li:nth-child(1){
 nav a{
     color: #00008b;
     text-decoration: none;
-    font-family: Leelawadee, Impact, sans-serif;
+    font-family: Leelawadee,sans-serif;
     font-size: 28px;
     padding: 0 0.15em;
     width: 7em;
@@ -52,7 +52,7 @@ nav a:active{
     position: relative;
 }
 .ContentPrincipale{
-    font-family: Leelawadee, Impact, sans-serif;
+    font-family: Leelawadee,sans-serif;
     font-size: 25px;
     color: darkblue;
     text-align: center;
@@ -278,7 +278,7 @@ legend{
     text-align: center;
     color: darkblue;
     font-size: 25px;
-    font-family: Leelawadee, Impact, sans-serif;
+    font-family: Leelawadee,sans-serif;
 }
 #panierVide2{
     text-decoration: none;
@@ -389,7 +389,7 @@ table#tabPanier details{
     text-align: left;
 }
 #tabPanier{
-    font-family: Leelawadee, Impact, sans-serif;
+    font-family: Leelawadee,sans-serif;
     font-size: 25px;
     color: darkblue;
     text-align: center;
