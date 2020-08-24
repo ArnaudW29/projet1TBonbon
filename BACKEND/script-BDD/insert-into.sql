@@ -43,4 +43,4 @@ VALUES
 
 INSERT INTO tbCommandes(commandesId,clientId,commandesPrixTOT,commandesQteTOT)
 VALUES
-('co01',1,5.45,5);          // 5*b01
+(1,1,5.45,5);          // 5*b01
