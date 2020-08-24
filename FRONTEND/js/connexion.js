@@ -19,7 +19,7 @@ function connexion() {
         "<input id=\"boutonConnexion\" class=\"boutonConnexion\" type=\"submit\" value=\"Connexion\">\n" +
         "    </form>\n" +
         "    </div>";
-    gid('textco').innerHTML = "Si vous avez "+"<strong>"+"deja "+"</strong>"+"un compte veuillez vous identifiez ci dessous, sinon inscrivez vous "+"<strong>"+"<a href='inscription.html' class='inscription'>"+"ici"+"</a>"+"</strong>"+".";
+    gid('textco').innerHTML = "Si vous avez "+"<strong>"+"deja "+"</strong>"+"un compte veuillez vous identifier ci dessous, sinon inscrivez vous "+"<strong>"+"<a href='inscription.html' class='inscription'>"+"ici"+"</a>"+"</strong>"+".";
 }
 function connexionCatal() {
     gid("connexion").innerHTML = "<div id=\"connexionH\">\n" +
@@ -216,7 +216,7 @@ function panier(){
                 let id = x.bonbonId;
                 let cId= clientClient[0].clientId;
                 str += "<tr class='row' id=" + id + " ><td>" + x.bonbonNom + "</td><td>" + x.marqueNom  + "</td><td>" + x.bonbonQte + " g" + "</td><td>" + (x.bonbonPrix).toFixed(2)
-                    + " €" + "</td><td>" + x.QttBonbon + "</td><td>" + (x.prixTot).toFixed(2) + " €" + "</td>";
+                    + " €" + "</td><td id='qtt'>" + x.QttBonbon + "</td><td>" + (x.prixTot).toFixed(2) + " €" + "</td>";
                 str += "<td><input type='submit' id='imageSuppression' value='' onclick='suppr(" + '"' + id + '"' +','+'"' + cId + '"'+ ");'></td></tbody>";
             }
             for (let y of parse) {
@@ -228,11 +228,12 @@ function panier(){
             gid('commander&suppr').innerHTML = "<input type='submit' id='suppr' class='boutonSuppr' value='Vider votre panier' onclick='videPanier(" + '"' + clientClient[0].clientId + '"' + ");'>" +"<input type='submit' id='commander' class='boutonCommander' value='Commander' onclick='commander("+'"'+clientClient[0].clientId+'"'+");'> ";
         }
     };
+    montantTot2 = montantTot;
     xhr.send();
 }
 function commander(clientId){
-    montantTot2.toFixed(2);
 let commandesId = "";
+    montantTot2.toFixed(2);
  let xhr = new XMLHttpRequest();
     xhr.open('get','proc_getCommandesId', false);
     xhr.onload = function(){
@@ -240,7 +241,6 @@ let commandesId = "";
         commandesId = (parse.length)+1;
     };
     xhr.send();
-
     xhr = new XMLHttpRequest();
     xhr.open('get','proc_insertCommandes?commId='+commandesId+'&clId='+clientId+'&commPrixTOT='+montantTot2+'&commQteTOT='+QteBonbon, false);
     xhr.onload = function(){
@@ -320,7 +320,9 @@ function suppr(bonbonId,cId) {
     };
     xhr.send();
     gid(bonbonId).remove();
+    QteBonbon = 0;
     panier();
+
 }
 /**
  * Envoit une requete HTTP XML afin d'aller supprimer toutes les lignes du client dans la table "tbPanier"
@@ -342,7 +344,7 @@ function videPanier(clientId){
  */
 function deco(){
     gid("deconnexion").innerHTML="";
-    gid('textco').innerHTML = "Si vous avez <strong>deja </strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
+    gid('textco').innerHTML = "Si vous avez <strong>deja </strong> un compte veuillez vous identifier ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
     gid("panier").innerHTML="<table border=\"1\" cellpadding=\"10\" cellspacing=\"1\" id=\"tabPanier\"> </table>";
     gid('prixtot').innerHTML ="";
     gid('panierVide').innerHTML = "";
@@ -356,7 +358,7 @@ function deco(){
  */
 function decoCata(){
     gid("deconnexion").innerHTML="";
-    gid('textco2').innerHTML =  "Si vous avez <strong>deja </strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
+    gid('textco2').innerHTML =  "Si vous avez <strong>deja </strong> un compte veuillez vous identifier ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
     sessionStorage.clear();
     connexionCatal();
 }
@@ -367,7 +369,7 @@ function decoCata(){
 function decoHisto(){
     gid("deconnexion").innerHTML="";
     gid('recivComm').innerHTML = "";
-    gid('textco2').innerHTML =  "Si vous avez <strong>deja </strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
+    gid('textco2').innerHTML =  "Si vous avez <strong>deja </strong> un compte veuillez vous identifier" + " ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>.";
     sessionStorage.clear();
     connexionHistorique();
 }
@@ -393,7 +395,7 @@ function verifIdentifiant(identifiant){
         gid('verifBad').textContent ="";
         gid('verifGood').textContent ="L'identifiant est disponible !";
         }
-}
+}.
 xhr.send();
 }
 /**
@@ -419,6 +421,6 @@ function verifMail(Mail){
             gid('verifMailGood').textContent ="L'email n'est pas encore utilisé !";
         }
 
-    }
+    };
     xhr.send();
 }
