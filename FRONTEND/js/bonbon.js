@@ -1,6 +1,12 @@
 function gid(id){
     return document.getElementById(id);
 }
+/**
+ * Envois une requete HTTP XML afin d'aller chercher la liste de tout les bonbons pour initialiser le catalogue de bonbon
+ * @type {XMLHttpRequest}
+ * @result : la variable unBonbon recoit toutes les donnees d'un bonbon en fonction de son id
+ */
+
 function initBonbon() { // Initialise la page avec le catalogue de bonbon
     let xhr = new XMLHttpRequest();
     xhr.open('get', "http://localhost:82/initBonbon", true);

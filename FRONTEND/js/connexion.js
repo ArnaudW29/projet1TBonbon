@@ -110,7 +110,6 @@ function connexionPanier(){
             gid("textco").innerHTML="<p class='error'> mauvais identifiant ou mauvais mot de passe</p>";
         }
         else{
-            console.log(clientClient);
             storeConnexion();
             loadpanier();
             gid("connexion").innerHTML="";
@@ -128,7 +127,6 @@ function connexionPanier(){
            gid("textco2").innerHTML="<p class='error'> mauvais identifiant ou mauvais mot de passe</p>";
         }
         else{
-            console.log(clientClient);
             storeConnexion();
             gid("connexion").innerHTML="";
             gid('textco2').innerHTML = "";
@@ -156,7 +154,14 @@ function storeConnexion(){
     sessionStorage.setItem('mdp',clientClient[0].mdp);
     sessionStorage.setItem('identifiant',clientClient[0].identifiant);
 }
-
+/**
+ * @param bonbonNom, nom du bonbon
+ * @param bonbonId, id du bonbon
+ * @param marqueNom, nom de la marque du bonbon
+ * @param bonbonQte, poids pour chaque bonbon
+ * @param qtt,  quantite selectionner/souhaiter par le client
+ * fonction qui ajoute le bonbon et la quantité souhaité par le client dans la table "tbPanier" dans la base de donnée
+ */
 function ajoutBonbon(bonbonNom,bonbonId,marqueNom,bonbonQte,qtt){
     if(Object.keys(clientClient).length ===0){
         alert("Veuillez vous connecter");
@@ -167,7 +172,7 @@ function ajoutBonbon(bonbonNom,bonbonId,marqueNom,bonbonQte,qtt){
     xhr.onload=function(){
     };
     xhr.send();
-    alert("L'article a été ajouté a votre panier")
+    alert("L'article a été ajouté a votre panier");
 }
 function checkFirstVisit() {
     if(document.cookie.indexOf('mycookie')===-1) {
@@ -189,13 +194,12 @@ function loadpanier(){
 
 function panier(){
     let montantTot=0;
-    let xhr = new XMLHttpRequest()
-    xhr.open('get','proc_getPanier?Id='+clientClient[0].clientId,false)
+    let xhr = new XMLHttpRequest();
+    xhr.open('get','proc_getPanier?Id='+clientClient[0].clientId,false);
     xhr.onload = function() {
         panierHisto = Object.assign(panierHisto,JSON.parse(xhr.responseText));
         let parse = JSON.parse(xhr.responseText);
         let rep = parse.length;
-        console.log(parse);
         panierNbr = parse.length;
         if (rep === 0) {
             gid("panier").innerHTML="<table border=\"1\" cellpadding=\"10\" cellspacing=\"1\" id=\"tabPanier\"> </table>";
@@ -206,35 +210,32 @@ function panier(){
             let str = "";
             str += "<thead><th>Nom du bonbon</th><th>Marque</th><th>Poids en gramme pour une ration de bonbon</th><th>Prix pour une ration de bonbon</th><th>Quantite Totale</th><th>Prix total</th></thead><tbody>";
             for (let x of parse) {
-                QteBonbon += x.QttBonbon
-                console.log(QteBonbon);
+                QteBonbon += x.QttBonbon;
                 let id = x.bonbonId;
-                let cId= clientClient[0].clientId
+                let cId= clientClient[0].clientId;
                 str += "<tr class='row' id=" + id + " ><td>" + x.bonbonNom + "</td><td>" + x.marqueNom  + "</td><td>" + x.bonbonQte + " g" + "</td><td>" + (x.bonbonPrix).toFixed(2)
                     + " €" + "</td><td>" + x.QttBonbon + "</td><td>" + (x.prixTot).toFixed(2) + " €" + "</td>";
-                str += "<td><input type='submit' id='imageSuppression' value='' onclick='suppr(" + '"' + id + '"' +','+'"' + cId + '"'+ ");'></td></tbody>"
+                str += "<td><input type='submit' id='imageSuppression' value='' onclick='suppr(" + '"' + id + '"' +','+'"' + cId + '"'+ ");'></td></tbody>";
             }
             for (let y of parse) {
                montantTot += y.prixTot;
-               montantTot2 += y.prixTot
+               montantTot2 += y.prixTot;
             }
             gid('prixtot').innerHTML =  "<b class='Somme'>Total : </b>"  + montantTot.toFixed(2) + " €" ;
             gid('tabPanier').innerHTML = str;
-            gid('commander&suppr').innerHTML = "<input type='submit' id='suppr' class='boutonSuppr' value='Vider votre panier' onclick='videPanier(" + '"' + clientClient[0].clientId + '"' + ");'>" +"<input type='submit' id='commander' class='boutonCommander' value='Commander' onclick='commander("+'"'+clientClient[0].clientId+'"'+");'> "
+            gid('commander&suppr').innerHTML = "<input type='submit' id='suppr' class='boutonSuppr' value='Vider votre panier' onclick='videPanier(" + '"' + clientClient[0].clientId + '"' + ");'>" +"<input type='submit' id='commander' class='boutonCommander' value='Commander' onclick='commander("+'"'+clientClient[0].clientId+'"'+");'> ";
         }
     };
     xhr.send();
 }
 function commander(clientId){
-    montantTot2.toFixed(2)
+    montantTot2.toFixed(2);
 let commandesId = "";
- let count = 1;
- let xhr = new XMLHttpRequest()
+ let xhr = new XMLHttpRequest();
     xhr.open('get','proc_getCommandesId', false);
     xhr.onload = function(){
         let parse = JSON.parse(xhr.responseText);
         commandesId = (parse.length)+1;
-        console.log(commandesId);
     };
     xhr.send();
 
@@ -255,7 +256,6 @@ function Historique(){
             gid("textco2").innerHTML="<p class='error'> mauvais identifiant ou mauvais mot de passe</p>";
         }
         else{
-            console.log(clientClient);
             storeConnexion();
             getHisto();
             gid("connexion").innerHTML="";
@@ -271,23 +271,19 @@ function getHisto(){
 let historique = {};
 let strRetour = "";
     let commandesId = "";
-    let xhr = new XMLHttpRequest()
+    let xhr = new XMLHttpRequest();
     xhr.open('get','proc_getCommandesId', false);
     xhr.onload = function(){
         let parse = JSON.parse(xhr.responseText);
         commandesId = (parse.length)+1;
-        console.log(commandesId);
-        console.log(parse);
     };
     xhr.send();
-
 
     xhr = new XMLHttpRequest();
     xhr.open('get','proc_getCommandes?clId='+ clientClient[0].clientId,false);
     xhr.onload= function (){
        historique= Object.assign(historique,JSON.parse(xhr.responseText));
     };
-    console.log(historique)
     xhr.send();
     strRetour +="<table class='tableCommande'>"+"<thead><th>Commandes n° </th><th>Prix Total</th><th>Quantité de la commande</th><th>Date de la commande</th></thead>";
     let count = 1;
@@ -308,7 +304,12 @@ function loadHisto(){
         connexionHistorique();
     }
 }
-
+/**
+ * @param bonbonId, id du bonbon
+ * @param cId, id du client connecté sur le site
+ * fonction qui supprime une ligne de la table "tbPanier" dans la base de donnée en fonction de l'id du bonbon et du client connecté
+ * et affiche le panier du client sans la ligne qu'on viens de supprimer
+ */
 function suppr(bonbonId,cId) {
     let xhr = new XMLHttpRequest();
     xhr.open('get', 'proc_suppressionPanier?bId=' + bonbonId +"&clId="+cId, false);
@@ -318,6 +319,11 @@ function suppr(bonbonId,cId) {
     gid(bonbonId).remove();
     panier();
 }
+/**
+ * @param clientId, id du client connecté sur le site
+ * fonction qui supprime toutes les lignes de la table "tbPanier" dans la base de donnée en fonction de son id
+ * et qui affiche le panier vide du client
+ */
 function videPanier(clientId){
     let xhr = new XMLHttpRequest();
     xhr.open('get','proc_suppressionPanierComplet?clId='+clientId, false);
@@ -326,6 +332,10 @@ function videPanier(clientId){
     xhr.send();
     panier();
 }
+/**
+ * fonction qui déconnecte l'utilisateur actuel et qui enleve l'affichage du panier du client et re affiche le formulaire de connexion
+ * pour que un autre utilisateur puisse se connecter
+ */
 function deco(){
     gid("deconnexion").innerHTML="";
     gid('textco').innerHTML = "Si vous avez <strong>deja </strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
@@ -336,12 +346,20 @@ function deco(){
     sessionStorage.clear();
     connexion();
 }
+/**
+ * fonction qui déconnecte l'utilisateur actuel et re affiche le formulaire de connexion
+ * pour que un autre utilisateur puisse se connecter
+ */
 function decoCata(){
     gid("deconnexion").innerHTML="";
     gid('textco2').innerHTML =  "Si vous avez <strong>deja </strong> un compte veuillez vous identifiez ci dessous, sinon inscrivez vous <strong><a href=\"\"inscription.html\" class=\"\inscription\">ici</a></strong>."
     sessionStorage.clear();
     connexionCatal();
 }
+/**
+ * fonction qui déconnecte l'utilisateur actuel et qui enleve l'affichage de l'historique du client  et re affiche le formulaire de connexion
+ * pour que un autre utilisateur puisse se connecter
+ */
 function decoHisto(){
     gid("deconnexion").innerHTML="";
     gid('recivComm').innerHTML = "";
@@ -349,13 +367,17 @@ function decoHisto(){
     sessionStorage.clear();
     connexionHistorique();
 }
+/**
+ * @param identifiant, identifiant rentre dans le form par l'utilisateur
+ * fonction qui verifie si l'identifaint entrée par l'utilisateur est deja dans la tbClient dans la base de donnée
+ */
 function verifIdentifiant(identifiant){
     let xhr = new XMLHttpRequest();
     xhr.open('get', 'proc_verifIdentifiant?id='+identifiant,true);
     xhr.onload =function x(){
         let parse = JSON.parse(xhr.responseText);
         let rep = parse.length;
-        identifi = parse.length
+        identifi = parse.length;
         if(rep === 1){
         gid('verifGood').textContent="";
         gid('verifBad').textContent = "L'identifiant existe déjà !";
@@ -367,15 +389,17 @@ function verifIdentifiant(identifiant){
 }
 xhr.send();
 }
+/**
+ * @param Mail, mail rentre dans le form par l'utilisateur
+ * fonction qui verifie si le mail entrée par l'utilisateur est deja dans la tbClient dans la base de donnée
+ */
 function verifMail(Mail){
     let xhr = new XMLHttpRequest();
-    console.log('proc_verifMail?Mail='+Mail);
     xhr.open('get', 'proc_verifMail?Mail='+Mail,true);
     xhr.onload =function x(){
         let parse = JSON.parse(xhr.responseText);
         let rep = parse.length;
         mail = parse.length;
-        console.log(rep)
         if(rep === 1){
             gid('verifMailGood').textContent ="";
             gid('verifMailBad').textContent = "L'email est deja utilisé!";
