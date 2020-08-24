@@ -1,11 +1,11 @@
 
-CREATE PROCEDURE "DBA"."proc_getCommandes"(IN commId INTEGER)
+CREATE PROCEDURE "dba"."proc_getCommandes"(IN clId INTEGER)
 RESULT(commandesId INTEGER,clientId INTEGER, commandesPrixTOT decimal(6,2), commandesQteTOT integer, commandesDate datetime)
 BEGIN
     call sa_set_http_header('Access-Control-Allow-Origin','*');
     call sa_set_http_header('Content-Type','application/json');
     Select commandesId, clientId, commandesPrixTOT, commandesQteTOT, commandesDate from tbCommandes
-    where commandesId = commId
+    where clientId = clId
 end;
 
  ------------------------------------/* Service pour recevoir l'historique en fonction de l'id de la commande*/---------------------------------------------------
