@@ -1,4 +1,4 @@
-CREATE PROCEDURE dba.insertPanier( in id INTEGER,bId char(3), in Qte INTEGER)
+CREATE PROCEDURE "dba"."proc_insertPanier"( in id INTEGER,bId char(3), in Qte INTEGER)
 BEGIN 
   INSERT INTO tbPanier(clientId,bonbonId,panierQte)
   VALUES 
