@@ -1,7 +1,7 @@
 /* Select des info sur les bonbons */
 
 CREATE PROCEDURE "dba"."proc_init_bonbon"()
-RESULT (bonbonId CHAR(3), bonbonNom VARCHAR(45), bonbonType VARCHAR(15), bonbonPrix DECIMAL(4,2),bonbonQte VARCHAR(15),marqueId CHAR(3))
+RESULT (bonbonId CHAR(3), bonbonNom VARCHAR(45), bonbonType VARCHAR(15), bonbonPrix DECIMAL(4,2),bonbonQte VARCHAR(15),marqueNom VARCHAR(30))
 BEGIN 
   call sa_set_http_header('Access-Control-Allow-Origin','*');
   call sa_set_http_header('Content-Type','application/json');
